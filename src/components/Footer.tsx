@@ -22,6 +22,7 @@ export default function Footer() {
     { href: '/about', label: t('nav.about') },
     { href: '/contact', label: t('nav.contact') },
     { href: '/faq', label: lang === 'ar' ? 'الأسئلة الشائعة' : 'FAQs' },
+    { href: '/privacy', label: lang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy' },
   ];
 
   const companyServices = [
@@ -200,9 +201,19 @@ export default function Footer() {
       <div className="border-t border-slate-200 dark:border-white/10 bg-slate-200/70 dark:bg-[#071120] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center">
-            <p className="text-xs text-slate-600 dark:text-gray-400 font-medium">
-              © 2025 {t('footer.rights')} | {t('footer.taxNotice')}
-            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-600 dark:text-gray-400 font-medium">
+              <span>© 2025 {t('footer.rights')}</span>
+              <span>•</span>
+              <Link
+                href="/privacy"
+                title={lang === 'ar' ? 'سياسة الخصوصية وسرية البيانات' : 'Privacy Policy'}
+                className="hover:text-[#D4A843] transition-colors underline-offset-4 hover:underline font-semibold"
+              >
+                {lang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy'}
+              </Link>
+              <span>•</span>
+              <span>{t('footer.taxNotice')}</span>
+            </div>
             <p className="text-xs text-[#9E7820] dark:text-[#D4A843] font-bold">
               {lang === 'ar'
                 ? 'أفضل خدمات التكسير، التشوين، توريد العمالة والنظافة في مصر'
