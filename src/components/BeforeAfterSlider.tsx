@@ -1,19 +1,25 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, ReactNode } from 'react';
 
 interface BeforeAfterSliderProps {
-  beforeImage: string;
-  afterImage: string;
+  beforeImage?: string;
+  afterImage?: string;
+  before?: ReactNode;
+  after?: ReactNode;
   beforeLabel?: string;
   afterLabel?: string;
+  className?: string;
 }
 
 export default function BeforeAfterSlider({
   beforeImage,
   afterImage,
+  before,
+  after,
   beforeLabel = 'قبل',
   afterLabel = 'بعد',
+  className = '',
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -52,7 +58,6 @@ export default function BeforeAfterSlider({
 
     const handleTouchMove = (e: TouchEvent) => {
       if (!isDragging) return;
-      e.preventDefault();
       updatePosition(e.touches[0].clientX);
     };
 
@@ -78,7 +83,7 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className="relative w-full aspect-[4/3] overflow-hidden rounded-xl cursor-col-resize select-none group border border-white/10"
+      className={`relative w-full aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-2xl cursor-col-resize select-none group border border-white/10 shadow-xl ${className}`}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
       role="slider"
@@ -92,61 +97,64 @@ export default function BeforeAfterSlider({
         if (e.key === 'ArrowRight') setSliderPosition((p) => Math.min(p + 2, 100));
       }}
     >
-      {/* After Image (full background) */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${afterImage})` }}
-      />
+      {/* After Layer (Full base) */}
+      <div className="absolute inset-0 w-full h-full">
+        {after ? (
+          after
+        ) : afterImage ? (
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${afterImage})` }}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-emerald-800 to-teal-900 flex items-center justify-center text-white font-bold">
+            بعد
+          </div>
+        )}
+      </div>
 
       {/* After Label */}
-      <span className="absolute top-4 left-4 bg-[#D4A843] text-[#0a1628] text-xs font-bold px-3 py-1.5 rounded-full z-10 pointer-events-none">
+      <span className="absolute top-4 left-4 bg-[#D4A843] text-[#0a1628] text-xs font-black px-3.5 py-1.5 rounded-full z-10 pointer-events-none shadow-md">
         {afterLabel}
       </span>
 
-      {/* Before Image (clipped) */}
+      {/* Before Layer (Clipped to sliderPosition from left) */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 w-full h-full overflow-hidden"
         style={{
-          backgroundImage: `url(${beforeImage})`,
-          clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+          clipPath: `polygon(0% 0%, ${sliderPosition}% 0%, ${sliderPosition}% 100%, 0% 100%)`,
         }}
-      />
+      >
+        {before ? (
+          before
+        ) : beforeImage ? (
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${beforeImage})` }}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-white font-bold">
+            قبل
+          </div>
+        )}
+      </div>
 
       {/* Before Label */}
-      <span className="absolute top-4 right-4 bg-[#0a1628] text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 pointer-events-none">
+      <span className="absolute top-4 right-4 bg-[#0a1628]/90 text-white text-xs font-bold px-3.5 py-1.5 rounded-full z-10 pointer-events-none border border-white/20 shadow-md">
         {beforeLabel}
       </span>
 
-      {/* Slider Line */}
+      {/* Divider Bar & Handle */}
       <div
-        className="absolute top-0 bottom-0 w-0.5 bg-white z-20 pointer-events-none"
+        className="absolute top-0 bottom-0 w-1 bg-white z-20 pointer-events-none shadow-[0_0_10px_rgba(0,0,0,0.5)]"
         style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
       >
-        {/* Slider Handle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg shadow-black/30 flex items-center justify-center pointer-events-none">
-          <div className="flex items-center gap-0.5">
-            {/* Left arrow */}
-            <svg
-              className="w-3 h-3 text-[#0a1628]"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
-            </svg>
-            {/* Right arrow */}
-            <svg
-              className="w-3 h-3 text-[#0a1628]"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
-            </svg>
-          </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#D4A843] text-[#0a1628] shadow-2xl flex items-center justify-center border-2 border-white pointer-events-none">
+          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6 1.41 1.41z" />
+          </svg>
         </div>
       </div>
-
-      {/* Interaction hint overlay (shown briefly) */}
-      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-0 transition-opacity pointer-events-none" />
     </div>
   );
 }

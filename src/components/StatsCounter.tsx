@@ -1,14 +1,16 @@
 'use client';
 
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState, ReactNode, ComponentType, isValidElement } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useApp } from '@/context/AppContext';
 
 interface StatItem {
-  number: number;
+  number?: number;
+  value?: number;
   suffix: string;
   label: string;
-  icon: ReactNode;
+  icon: ReactNode | ComponentType<{ className?: string }>;
 }
 
 interface StatsCounterProps {
@@ -19,10 +21,12 @@ function AnimatedNumber({
   target,
   suffix,
   inView,
+  lang,
 }: {
   target: number;
   suffix: string;
   inView: boolean;
+  lang: string;
 }) {
   const [count, setCount] = useState(0);
 
@@ -49,63 +53,69 @@ function AnimatedNumber({
   }, [inView, target]);
 
   return (
-    <span className="text-4xl sm:text-5xl font-bold text-[#D4A843] tabular-nums" dir="ltr">
-      {suffix === '+' && '+'}
-      {count.toLocaleString('en-US')}
-      {suffix !== '+' && suffix}
+    <span className="font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 dark:text-white tracking-tight flex items-center justify-center">
+      <span className="text-[#D4A843]">{suffix}</span>
+      <span>{count.toLocaleString(lang === 'ar' ? 'ar-EG' : 'en-US')}</span>
     </span>
   );
 }
 
 export default function StatsCounter({ stats }: StatsCounterProps) {
+  const { lang } = useApp();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 bg-[#0a1628] relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-[#D4A843]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#D4A843]/5 rounded-full blur-3xl" />
-      </div>
+    <div
+      ref={ref}
+      className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+    >
+      {stats.map((stat, i) => {
+        const targetValue = stat.number ?? stat.value ?? 0;
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="text-center"
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[#D4A843]/10 border border-[#D4A843]/20 flex items-center justify-center text-[#D4A843] text-xl">
-                {stat.icon}
-              </div>
+        const renderIcon = () => {
+          if (isValidElement(stat.icon)) {
+            return stat.icon;
+          }
+          if (typeof stat.icon === 'function') {
+            const IconComp = stat.icon as ComponentType<{ className?: string }>;
+            return <IconComp className="w-8 h-8 text-[#D4A843]" />;
+          }
+          return null;
+        };
 
-              {/* Number */}
-              <div className="mb-2">
-                <AnimatedNumber
-                  target={stat.number}
-                  suffix={stat.suffix}
-                  inView={inView}
-                />
-              </div>
+        return (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="relative bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-6 sm:p-8 text-center backdrop-blur-sm hover:border-[#D4A843] dark:hover:border-[#D4A843]/40 transition-all duration-300 shadow-xl dark:shadow-none hover:-translate-y-1"
+          >
+            {/* Icon */}
+            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#D4A843]/15 border border-[#D4A843]/30 flex items-center justify-center shadow-sm">
+              {renderIcon()}
+            </div>
 
-              {/* Label */}
-              <p className="text-sm sm:text-base text-gray-400 font-medium">
-                {stat.label}
-              </p>
+            {/* Counter */}
+            <div className="mb-2">
+              <AnimatedNumber
+                target={targetValue}
+                suffix={stat.suffix}
+                inView={inView}
+                lang={lang}
+              />
+            </div>
 
-              {/* Decorative line */}
-              <div className="mt-3 mx-auto w-8 h-0.5 bg-[#D4A843]/30 rounded-full" />
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+            {/* Label */}
+            <p className="text-sm sm:text-base font-bold text-slate-700 dark:text-gray-300">
+              {stat.label}
+            </p>
+          </motion.div>
+        );
+      })}
+    </div>
   );
 }

@@ -14,41 +14,34 @@ export default function SectionTitle({
   title,
   subtitle,
   centered = true,
-  light = false,
 }: SectionTitleProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.15,
   });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 25 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`mb-12 ${centered ? 'text-center' : 'text-right'}`}
     >
       {/* Subtitle */}
       {subtitle && (
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className={`text-sm font-medium tracking-wide mb-3 ${
-            light ? 'text-[#D4A843]' : 'text-[#D4A843]'
-          }`}
+          className="text-xs sm:text-sm font-black tracking-wider uppercase mb-3 text-[#8F6B17] dark:text-[#D4A843]"
         >
           {subtitle}
         </motion.p>
       )}
 
-      {/* Title */}
-      <h2
-        className={`text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight ${
-          light ? 'text-white' : 'text-[#0a1628]'
-        }`}
-      >
+      {/* Main Title */}
+      <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight text-[#0a1628] dark:text-white transition-colors duration-300">
         {title}
       </h2>
 
@@ -56,16 +49,14 @@ export default function SectionTitle({
       <motion.div
         initial={{ scaleX: 0 }}
         animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className={`mt-4 ${centered ? 'mx-auto' : 'mr-0'}`}
+        transition={{ duration: 0.6, delay: 0.25 }}
+        className={`mt-4 flex items-center justify-center gap-2 ${
+          centered ? 'mx-auto' : 'mr-0'
+        }`}
       >
-        <div className="flex items-center gap-2 justify-center">
-          <span className="block w-8 h-0.5 bg-[#D4A843]/40 rounded-full" />
-          <span className="block w-3 h-3 rotate-45 border-2 border-[#D4A843] rounded-sm" />
-          <span className="block w-16 h-0.5 bg-[#D4A843] rounded-full" />
-          <span className="block w-3 h-3 rotate-45 border-2 border-[#D4A843] rounded-sm" />
-          <span className="block w-8 h-0.5 bg-[#D4A843]/40 rounded-full" />
-        </div>
+        <span className="w-12 h-1 bg-[#D4A843] rounded-full" />
+        <span className="w-2.5 h-2.5 bg-[#D4A843] rotate-45 rounded-sm" />
+        <span className="w-12 h-1 bg-[#D4A843] rounded-full" />
       </motion.div>
     </motion.div>
   );
