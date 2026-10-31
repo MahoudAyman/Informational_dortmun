@@ -109,11 +109,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
       { url: '/logo.svg', type: 'image/svg+xml' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
       { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' },
     ],
+    shortcut: [{ url: '/logo.svg', type: 'image/svg+xml' }],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
@@ -229,16 +230,10 @@ export default function RootLayout({
         <meta name="description" content="شركة دورتمون | توريد عمالة مدربة، تشوين رملة وأسمنت، تكسير حوائط وبيوت، ونظافة مواقع في مصر. info@dortmun.site | 01029046651" />
         <meta name="keywords" content="شركة دورتمون, توريد عمالة مصر, تشوين رملة وأسمنت, تكسير حوائط, هدم, نظافة مواقع, info@dortmun.site, 01029046651" />
         <meta name="author" content="شركة دورتمون للمقاولات والتوريدات" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/logo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="preload" as="image" href="/images/hero-bg.webp" fetchPriority="high" type="image/webp" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
       </head>
       <body className={`${tajawal.className} font-tajawal bg-slate-50 dark:bg-[#0a1628] text-slate-900 dark:text-gray-100 antialiased min-h-screen selection:bg-[#D4A843] selection:text-[#0a1628]`}>
         <AppProvider>{children}</AppProvider>
