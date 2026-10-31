@@ -21,69 +21,64 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dortmun.site'),
   applicationName: 'شركة دورتمون للمقاولات والتوريدات',
   category: 'construction',
+  generator: 'Next.js',
   title: {
-    default: 'شركة دورتمون | توريد عمالة وتشوين رملة وأسمنت وتكسير حوائط ونظافة مواقع مصر',
+    default:
+      'شركة دورتمون | توريد عمالة مدربة، تشوين رملة وأسمنت، تكسير حوائط وبيوت، ونظافة مواقع في مصر',
     template: '%s | شركة دورتمون للمقاولات والتوريدات',
   },
   description:
-    'شركة دورتمون للمقاولات والتوريدات العامة (سجل ضريبي: 781-865-344) تقدم توريد عمالة مدربة، تشوين رملة وأسمنت وسن، تكسير حوائط وبيوت، ونظافة مواقع في مصر. للتواصل: info@dortmun.site',
+    'شركة دورتمون للمقاولات والتوريدات العامة تقدم توريد عمالة مدربة، تشوين رملة وأسمنت وسن، تكسير حوائط وبيوت، هدم، ونظافة مواقع في القاهرة وجميع محافظات مصر. للتواصل: info@dortmun.site | 01029046651.',
   keywords: [
     'شركة دورتمون',
     'دورتمون للمقاولات',
-    'dortmun.site',
-    'info@dortmun.site',
+    'دورتمون مصر',
+    'دورتمون للتوريدات',
     'توريد عمالة في مصر',
     'توريد عمالة في القاهرة',
-    'صنايعية في مصر',
-    'صنايعية في القاهرة',
-    'صنايعية وعمال في جميع المحافظات',
-    'تكسير بيت',
-    'تكسير بيوت',
+    'تشوين رملة وأسمنت',
+    'تشوين رمل وأسمنت وسن',
+    'تكسير حوائط وبيوت',
     'تكسير حمامات',
-    'تكسير حمامات في مصر',
-    'تكسير حوائط',
-    'تكسير مطابخ وسيراميك',
     'هدم بيوت ومباني',
-    'تشوين رملة واسمنت وسن',
-    'تشوين رمل واسمنت وسن بالونش',
-    'تشوين مواد بناء للأدوار العليا',
-    'نظافة مواقع بناء',
-    'رفع ردش وانقاض هدم',
+    'نظافة مواقع البناء',
     'مقاولات عامة مصر',
-    'سجل ضريبي 781-865-344',
-    'محمود ايمن دورتمون',
-    'محمود حمادة دورتمون',
+    'مقاولون في مصر',
+    'شركة مقاولات',
+    'dortmun site',
+    'dortmun.site',
+    'info@dortmun.site',
     '01029046651',
     '01035633986',
-    'info@dortmun.site',
+    '781-865-344',
   ],
-  authors: [
-    { name: 'شركة دورتمون للمقاولات والتوريدات', url: 'https://dortmun.site' },
-  ],
+  authors: [{ name: 'شركة دورتمون للمقاولات والتوريدات', url: 'https://dortmun.site' }],
   creator: 'شركة دورتمون',
   publisher: 'شركة دورتمون للمقاولات والتوريدات',
-  formatDetection: {
-    telephone: true,
-    email: true,
-    address: true,
-  },
   alternates: {
     canonical: 'https://dortmun.site',
+    languages: {
+      ar: 'https://dortmun.site',
+      en: 'https://dortmun.site',
+    },
   },
   openGraph: {
     type: 'website',
     locale: 'ar_EG',
     url: 'https://dortmun.site',
     siteName: 'شركة دورتمون للمقاولات العامة والتوريدات',
-    title: 'شركة دورتمون | توريد عمالة وتشوين وتكسير ونظافة مواقع مصر',
+    title: 'شركة دورتمون | توريد عمالة مدربة، تشوين رملة وأسمنت، وتكسير ونظافة مواقع مصر',
     description:
-      'شريكك الموثوق في خدمات البناء والتوريد: توريد عمالة مدربة، تشوين رملة وأسمنت وسن، تكسير حوائط وبيوت، ونظافة مواقع في مصر. التواصل: info@dortmun.site',
+      'شركة دورتمون تقدم خدمات توريد عمالة مدربة، تشوين مواد البناء، تكسير حوائط وبيوت، هدم، ونظافة مواقع في القاهرة وجميع محافظات مصر. البريد الرسمي: info@dortmun.site',
+    emails: ['info@dortmun.site'],
+    phoneNumbers: ['+201029046651', '+201035633986'],
+    countryName: 'مصر',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'شعار وهوية شركة دورتمون للمقاولات والتوريدات',
+        alt: 'شركة دورتمون للمقاولات والتوريدات',
       },
     ],
   },
@@ -91,8 +86,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'شركة دورتمون | توريد عمالة وتشوين وتكسير ونظافة مواقع مصر',
     description:
-      'توريد عمالة، تشوين رمل وأسمنت وسن، تكسير حوائط وبيوت، ونظافة مواقع لكافة محافظات مصر. تواصل معنا عبر info@dortmun.site أو الواتساب.',
+      'توريد عمالة مدربة، تشوين رمل وأسمنت وسن، تكسير حوائط وبيوت، هدم، ونظافة مواقع في جميع محافظات مصر. تواصل: info@dortmun.site | 01029046651',
     images: ['/og-image.png'],
+    creator: '@dortmun',
+    site: '@dortmun',
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
   },
   robots: {
     index: true,
@@ -116,6 +118,9 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
+  verification: {
+    google: 'google-site-verification-token',
+  },
 };
 
 export default function RootLayout({
@@ -132,9 +137,11 @@ export default function RootLayout({
         url: 'https://dortmun.site',
         name: 'شركة دورتمون للمقاولات العامة والتوريدات',
         alternateName: ['Dortmund Contracting', 'دورتمون', 'dortmun.site'],
-        description: 'بوابة شركة دورتمون لتوريد العمالة وتشوين المواد والتكسير ونظافة المواقع في مصر',
+        description:
+          'بوابة شركة دورتمون لتوريد العمالة، تشوين المواد، التكسير، والهدم، ونظافة مواقع البناء في مصر.',
         inLanguage: 'ar-EG',
         email: 'info@dortmun.site',
+        telephone: ['+201029046651', '+201035633986'],
         potentialAction: {
           '@type': 'SearchAction',
           target: 'https://dortmun.site/services?q={search_term_string}',
@@ -147,14 +154,14 @@ export default function RootLayout({
         name: 'شركة دورتمون للمقاولات العامة والتوريدات',
         alternateName: ['Dortmund Contracting & Supplies', 'شركة دورتمون', 'دورتمون مصر', 'dortmun.site'],
         description:
-          'الشركة الرائدة في مصر لتوريد العمالة المدربة، تشوين رملة وأسمنت وسن، عمالة نظافة مواقع، وتكسير حوائط وبيوت مع خدمة فوريّة وفعالة في جميع المحافظات.',
+          'الشركة الرائدة في مصر لتوريد العمالة المدربة، تشوين رملة وأسمنت وسن، أعمال التكسير والهدم، ونظافة مواقع البناء.',
         url: 'https://dortmun.site',
         email: 'info@dortmun.site',
         logo: 'https://dortmun.site/logo.png',
         image: 'https://dortmun.site/og-image.png',
         taxID: '781-865-344',
         telephone: ['+201029046651', '+201035633986'],
-        priceRange: 'EGP 50 - 50,000 (أسعار تنافسية شاملة التشوين والتكسير والعمالة)',
+        priceRange: 'EGP 50 - 50,000',
         currenciesAccepted: 'EGP',
         paymentAccepted: 'Cash, Bank Transfer, Vodafone Cash, Electronic Wallets',
         sameAs: ['https://wa.me/201029046651', 'https://wa.me/201035633986'],
@@ -193,81 +200,6 @@ export default function RootLayout({
           latitude: 30.0131,
           longitude: 31.4363,
         },
-        openingHoursSpecification: [
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: [
-              'Monday',
-              'Tuesday',
-              'Wednesday',
-              'Thursday',
-              'Friday',
-              'Saturday',
-              'Sunday',
-            ],
-            opens: '00:00',
-            closes: '23:59',
-          },
-        ],
-        founder: [
-          {
-            '@type': 'Person',
-            name: 'محمود أيمن',
-            jobTitle: 'مدير المشاريع والتوريدات',
-            telephone: '+201029046651',
-          },
-          {
-            '@type': 'Person',
-            name: 'محمود حمادة',
-            jobTitle: 'مدير العمليات والتنفيذ الميداني',
-            telephone: '+201035633986',
-          },
-        ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'خدمات شركة دورتمون',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'توريد عمالة مدربة',
-                description: 'توريد عمالة ماهرة لجميع أعمال البناء والتشييد والتكسير والتشوين.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'تشوين رملة وأسمنت وسن',
-                description: 'توريد وتشوين خامات البناء بأعلى جودة مع الرفع للأدوار العليا بالأوناش.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'أعمال التكسير المتخصصة والهدم',
-                description: 'تكسير حوائط وحمامات ومطابخ وهدم بيوت وعقارات كاملة بأحدث المعدات وأمان تام.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'عمالة نظافة مواقع وإنشاءات',
-                description: 'تنظيف شامل لمواقع البناء بعد التكسير والتشطيب ونقل الأنقاض والمخلفات.',
-              },
-            },
-          ],
-        },
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '185',
-          bestRating: '5',
-          worstRating: '1',
-        },
         contactPoint: [
           {
             '@type': 'ContactPoint',
@@ -293,6 +225,10 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`dark scroll-smooth ${tajawal.variable}`}>
       <head>
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <meta name="description" content="شركة دورتمون | توريد عمالة مدربة، تشوين رملة وأسمنت، تكسير حوائط وبيوت، ونظافة مواقع في مصر. info@dortmun.site | 01029046651" />
+        <meta name="keywords" content="شركة دورتمون, توريد عمالة مصر, تشوين رملة وأسمنت, تكسير حوائط, هدم, نظافة مواقع, info@dortmun.site, 01029046651" />
+        <meta name="author" content="شركة دورتمون للمقاولات والتوريدات" />
         <link rel="preload" as="image" href="/images/hero-bg.webp" fetchPriority="high" type="image/webp" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
