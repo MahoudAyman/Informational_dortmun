@@ -8,9 +8,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://dortmund-eg.com/privacy',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function PrivacyPolicyAlias() {
   return <PrivacyPage />;
 }
-
