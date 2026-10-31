@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'محمود حمادة دورتمون',
   ],
   alternates: {
-    canonical: 'https://dortmund-eg.com/privacy',
+    canonical: 'https://dortmun.site/privacy',
   },
   robots: {
     index: true,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'سياسة الخصوصية وسرية البيانات | شركة دورتمون للمقاولات والتوريدات',
     description:
       'سياسة الخصوصية وسرية البيانات لشركة دورتمون للمقاولات والتوريدات العامة (سجل ضريبي: 781-865-344).',
-    url: 'https://dortmund-eg.com/privacy',
+    url: 'https://dortmun.site/privacy',
     siteName: 'شركة دورتمون للمقاولات والتوريدات',
     locale: 'ar_EG',
     type: 'article',
@@ -57,16 +57,16 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  '@id': 'https://dortmund-eg.com/privacy#webpage',
-  url: 'https://dortmund-eg.com/privacy',
+  '@id': 'https://dortmun.site/privacy#webpage',
+  url: 'https://dortmun.site/privacy',
   name: 'سياسة الخصوصية وسرية البيانات - شركة دورتمون للمقاولات والتوريدات',
   description:
     'سياسة الخصوصية وسرية البيانات لشركة دورتمون للمقاولات والتوريدات العامة (سجل ضريبي: 781-865-344).',
   inLanguage: 'ar-EG',
   isPartOf: {
     '@type': 'WebSite',
-    '@id': 'https://dortmund-eg.com/#website',
-    url: 'https://dortmund-eg.com',
+    '@id': 'https://dortmun.site/#website',
+    url: 'https://dortmun.site',
     name: 'شركة دورتمون للمقاولات والتوريدات',
   },
   breadcrumb: {
@@ -76,21 +76,21 @@ const jsonLd = {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://dortmund-eg.com',
+        item: 'https://dortmun.site',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'سياسة الخصوصية',
-        item: 'https://dortmund-eg.com/privacy',
+        item: 'https://dortmun.site/privacy',
       },
     ],
   },
   publisher: {
     '@type': 'Organization',
     name: 'شركة دورتمون للمقاولات والتوريدات',
-    url: 'https://dortmund-eg.com',
-    logo: 'https://dortmund-eg.com/logo.png',
+    url: 'https://dortmun.site',
+    logo: 'https://dortmun.site/logo.png',
     taxID: '781-865-344',
     telephone: '+201029046651',
     address: {

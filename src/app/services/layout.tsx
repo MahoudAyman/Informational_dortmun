@@ -13,13 +13,34 @@ export const metadata: Metadata = {
     'نظافة مواقع بناء مصر',
     'مقاولات توريد عمالة',
     'رقم ضريبي 781-865-344',
+    'dortmun.site',
   ],
+  alternates: {
+    canonical: 'https://dortmun.site/services',
+  },
   openGraph: {
     title: 'خدمات شركة دورتمون للمقاولات والتوريدات',
     description:
       'توريد عمالة، تشوين مواد بناء، تكسير حوائط وحمامات، ونظافة مواقع في جميع محافظات مصر.',
-    url: 'https://dortmund-eg.com/services',
+    url: 'https://dortmun.site/services',
+    siteName: 'شركة دورتمون للمقاولات العامة والتوريدات',
+    locale: 'ar_EG',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'خدمات شركة دورتمون للمقاولات والتوريدات',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'خدمات شركة دورتمون للمقاولات والتوريدات',
+    description:
+      'توريد عمالة مدربة، تشوين مواد، تكسير حوائط، ونظافة مواقع في كافة محافظات مصر.',
+    images: ['/og-image.png'],
   },
 };
 

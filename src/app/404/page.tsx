@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'عفواً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها. تصفح خدمات شركة دورتمون لتوريد العمالة، تشوين المواد، تكسير الحوائط ونظافة المواقع في مصر.',
   alternates: {
-    canonical: 'https://dortmund-eg.com/404',
+    canonical: 'https://dortmun.site/404',
   },
   robots: {
     index: false,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: '404 - الصفحة غير موجودة | شركة دورتمون للمقاولات والتوريدات',
     description:
       'الصفحة المطلوبة غير موجودة. انتقل للرئيسية أو تواصل مع إدارة دورتمون: 01029046651.',
-    url: 'https://dortmund-eg.com/404',
+    url: 'https://dortmun.site/404',
     siteName: 'شركة دورتمون للمقاولات والتوريدات',
     locale: 'ar_EG',
     type: 'website',

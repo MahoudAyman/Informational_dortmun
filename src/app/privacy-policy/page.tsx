@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'سياسة الخصوصية وسرية البيانات لشركة دورتمون للمقاولات والتوريدات العامة (سجل ضريبي: 781-865-344).',
   alternates: {
-    canonical: 'https://dortmund-eg.com/privacy',
+    canonical: 'https://dortmun.site/privacy',
   },
   robots: {
     index: true,

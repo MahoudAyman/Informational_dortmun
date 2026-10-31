@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dortmund-eg.com'),
+  metadataBase: new URL('https://dortmun.site'),
   title: {
     default: 'شركة دورتمون | توريد عمالة وتشوين رملة وأسمنت وتكسير حوائط ونظافة مواقع مصر',
     template: '%s | شركة دورتمون للمقاولات والتوريدات',
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   keywords: [
     'شركة دورتمون',
     'دورتمون للمقاولات',
+    'dortmun.site',
     'توريد عمالة في مصر',
     'توريد عمالة في القاهرة',
     'صنايعية في مصر',
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     '01035633986',
   ],
   authors: [
-    { name: 'شركة دورتمون للمقاولات والتوريدات', url: 'https://dortmund-eg.com' },
+    { name: 'شركة دورتمون للمقاولات والتوريدات', url: 'https://dortmun.site' },
   ],
   creator: 'شركة دورتمون',
   publisher: 'شركة دورتمون للمقاولات والتوريدات',
@@ -63,12 +64,12 @@ export const metadata: Metadata = {
     address: true,
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://dortmun.site',
   },
   openGraph: {
     type: 'website',
     locale: 'ar_EG',
-    url: 'https://dortmund-eg.com',
+    url: 'https://dortmun.site',
     siteName: 'شركة دورتمون للمقاولات العامة والتوريدات',
     title: 'شركة دورتمون | توريد عمالة وتشوين وتكسير ونظافة مواقع مصر',
     description:
@@ -123,21 +124,38 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
-    name: 'شركة دورتمون للمقاولات العامة والتوريدات',
-    alternateName: ['Dortmund Contracting & Supplies', 'شركة دورتمون', 'دورتمون مصر'],
-    description:
-      'الشركة الرائدة في مصر لتوريد العمالة المدربة، تشوين رملة وأسمنت وسن، عمالة نظافة مواقع، وتكسير حوائط وحمامات وبيوت في جميع محافظات جمهورية مصر العربية.',
-    url: 'https://dortmund-eg.com',
-    logo: 'https://dortmund-eg.com/logo.png',
-    image: 'https://dortmund-eg.com/og-image.png',
-    taxID: '781-865-344',
-    telephone: ['+201029046651', '+201035633986'],
-    priceRange: 'EGP 50 - 50,000 (أسعار تنافسية شاملة التشوين والتكسير والعمالة)',
-    currenciesAccepted: 'EGP',
-    paymentAccepted: 'Cash, Bank Transfer, Vodafone Cash, Electronic Wallets',
-    sameAs: [
-      'https://wa.me/201029046651',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://dortmun.site/#website',
+        url: 'https://dortmun.site',
+        name: 'شركة دورتمون للمقاولات العامة والتوريدات',
+        alternateName: ['Dortmund Contracting', 'دورتمون', 'dortmun.site'],
+        description: 'بوابة شركة دورتمون لتوريد العمالة وتشوين المواد والتكسير ونظافة المواقع في مصر',
+        inLanguage: 'ar-EG',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://dortmun.site/services?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://dortmun.site/#organization',
+        name: 'شركة دورتمون للمقاولات العامة والتوريدات',
+        alternateName: ['Dortmund Contracting & Supplies', 'شركة دورتمون', 'دورتمون مصر', 'dortmun.site'],
+        description:
+          'الشركة الرائدة في مصر لتوريد العمالة المدربة، تشوين رملة وأسمنت وسن، عمالة نظافة مواقع، وتكسير حوائط وحمامات وبيوت في جميع محافظات جمهورية مصر العربية.',
+        url: 'https://dortmun.site',
+        logo: 'https://dortmun.site/logo.png',
+        image: 'https://dortmun.site/og-image.png',
+        taxID: '781-865-344',
+        telephone: ['+201029046651', '+201035633986'],
+        priceRange: 'EGP 50 - 50,000 (أسعار تنافسية شاملة التشوين والتكسير والعمالة)',
+        currenciesAccepted: 'EGP',
+        paymentAccepted: 'Cash, Bank Transfer, Vodafone Cash, Electronic Wallets',
+        sameAs: [
+          'https://wa.me/201029046651',
       'https://facebook.com',
       'https://instagram.com',
     ],
@@ -267,7 +285,9 @@ export default function RootLayout({
         availableLanguage: ['Arabic', 'English'],
       },
     ],
-  };
+  },
+  ],
+};
 
   return (
     <html lang="ar" dir="rtl" className={`dark scroll-smooth ${tajawal.variable}`}>

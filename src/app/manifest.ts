@@ -7,6 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description:
       'توريد عمالة مدربة، تشوين رملة وأسمنت وسن لجميع الأدوار، أعمال تكسير حوائط وحمامات، ونظافة مواقع في مصر (سجل ضريبي: 781-865-344)',
     start_url: '/',
+    id: 'https://dortmun.site/',
+    scope: '/',
     display: 'standalone',
     orientation: 'portrait',
     background_color: '#0a1628',
