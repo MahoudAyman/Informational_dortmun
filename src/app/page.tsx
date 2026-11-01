@@ -95,16 +95,16 @@ export default function HomePage() {
       features:
         lang === 'ar'
           ? [
-              'عمال تشوين رملة وأسمنت',
+              'عمال تشوين رملة وأسمنت في الأدوار العالية',
+              'عمال تشوين رملة وأعمال رفع للمواقع',
               'عمال تكسير حمامات ومطابخ',
               'عمال نظافة مواقع ورفع أنقاض',
-              'توفير الطاقم خلال 24 ساعة',
             ]
           : [
-              'Sand and cement hoisting crews',
+              'Sand and cement hoisting crews for high floors',
+              'Material lifting workers for job sites',
               'Bathroom and kitchen demolition workers',
               'Site cleaning and rubble removal crews',
-              'Fast deployment within 24 hours',
             ],
       href: '/services#labor',
     },
@@ -119,16 +119,16 @@ export default function HomePage() {
       features:
         lang === 'ar'
           ? [
-              'رملة مغسولة ومعتمدة',
+              'عمال تشوين رملة وأسمنت',
+              'رفع رملة وسن للأدوار العالية',
               'أسمنت بورتلاندي ممتاز',
-              'سن 1 وسن 2 وزلط',
-              'رفع للأدوار العليا بالأوناش',
+              'تسليم مباشر للمواقع',
             ]
           : [
-              'Washed and approved sand',
+              'Sand and cement hoisting crews',
+              'High-floor material lifting',
               'Premium Portland cement',
-              'Graded aggregate and stone',
-              'Hydraulic hoisting to upper floors',
+              'Direct site delivery',
             ],
       href: '/services#materials',
     },
@@ -139,7 +139,7 @@ export default function HomePage() {
       description:
         lang === 'ar'
           ? 'نقدم تكسير حمامات في مصر، تكسير مطابخ، تكسير حوائط، وتكسير بيوت كاملة بأمان واحترافية عالية.'
-          : 'We provide bathroom demolition, kitchen demolition, wall breaking, and full house demolition with safety and precision.',
+          : 'We provide bathroom demolition in Egypt, kitchen demolition, wall breaking, and full house demolition with safety and precision.',
       features:
         lang === 'ar'
           ? [
@@ -283,7 +283,7 @@ export default function HomePage() {
 
     const msg =
       lang === 'ar'
-        ? `مرحباً إدارة شركة دورتمون، أود اعتماد مقايسة تقديرية:\n- الخدمة: ${serviceName}\n- المساحة/الكمية: ${calcQuantity}\n- الدور: ${calcFloor}\n- التقدير: ${estimate.min} - ${estimate.max} جنيه` 
+        ? `مرحباً إدارة شركة دورتمون، أود اعتماد مقايسة تقديرية:\n- الخدمة: ${serviceName}\n- المساحة/الكمية: ${calcQuantity}\n- الدور: ${calcFloor}\n- التقدير: ${estimate.min} - ${estimate.max} جنيه`
         : `Hello Dortmund Management, I would like to confirm an estimated quote:\n- Service: ${serviceName}\n- Quantity: ${calcQuantity}\n- Floor: ${calcFloor}\n- Estimated Cost: ${estimate.min} - ${estimate.max} EGP`;
 
     window.open(`https://wa.me/201029046651?text=${encodeURIComponent(msg)}`, '_blank');
@@ -336,7 +336,7 @@ export default function HomePage() {
               {lang === 'ar' ? 'تكسير حمامات في مصر' : 'Bathroom Demolition in Egypt'}
               <br />
               <span className="shimmer-gold">
-                {lang === 'ar' ? 'تكسير مطابخ وبيوت | شركة دورتمون' : 'Kitchen & House Demolition | Dortmund'}
+                {lang === 'ar' ? 'تكسير مطابخ وبيوت | عمال تشوين رملة وأسمنت | شركة دورتمون' : 'Kitchen & House Demolition | Sand & Cement Hoisting Workers | Dortmund'}
               </span>
             </motion.h1>
 
@@ -347,8 +347,8 @@ export default function HomePage() {
               className="text-base sm:text-xl text-slate-700 dark:text-gray-200 max-w-4xl mx-auto mb-10 leading-relaxed font-normal transition-colors"
             >
               {lang === 'ar'
-                ? 'شركة دورتمون تقدم تكسير حمامات في مصر، تكسير مطابخ، تكسير بيوت، هدم منازل، تشوين رملة وأسمنت وسن، وتوريد عمالة مدربة في القاهرة وجميع محافظات مصر.'
-                : 'Dortmun provides bathroom demolition in Egypt, kitchen demolition, house demolition, rubble removal, and labor supply across Cairo and all Egyptian governorates.'}
+                ? 'شركة دورتمون تقدم تكسير حمامات في مصر، تكسير مطابخ، تكسير بيوت، هدم منازل، عمال تشوين رملة وأسمنت في الأدوار العالية، وتوريد عمالة مدربة في القاهرة وجميع محافظات مصر.'
+                : 'Dortmun provides bathroom demolition in Egypt, kitchen demolition, house demolition, rubble removal, sand and cement hoisting workers for high floors, and skilled labor supply across Cairo and all Egyptian governorates.'}
             </motion.p>
 
             <motion.div
@@ -358,7 +358,7 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
               <a
-                href="https://wa.me/201029046651?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%AF%D9%88%D8%B1%D8%AA%D9%85%D9%88%D9%86%20%D8%A3%D8%B1%D9%8A%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D9%81%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1%20%D9%81%D9%84%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%8D%20%D8%A7%D9%84%D8%AA%D8%B4%D9%88%D9%8A%D9%86%20%D9%81%D9%84%D8%B1%D9%85%D9%84%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D9%85%D8%AA%D9%86"
+                href="https://wa.me/201029046651?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%AF%D9%88%D8%B1%D8%AA%D9%85%D9%88%D9%86%20%D8%A3%D8%B1%D9%8A%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D9%81%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1%20%D9%81%D9%84%D8%AD%D9%85%D8%A7%D9%87%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%AF%20%D8%A7%D9%84%D8%AA%D8%B4%D9%88%D9%8A%D9%86%20%D9%88%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%20%D8%A7%D9%84%D9%85%D9%85%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AA%D8%83%D8%B9%D8%A7%D8%AA"
                 target="_blank"
                 rel="noopener noreferrer"
                 title={lang === 'ar' ? 'طلب عرض سعر لتكسير حمامات ومطابخ وبيوت' : 'Request a quote for bathroom, kitchen and house demolition'}
@@ -458,9 +458,9 @@ export default function HomePage() {
               <div className="animate-marquee-left flex items-center gap-12 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">
                 <span>{lang === 'ar' ? '⚡ التجمع الخامس: تشوين رملة وأسمنت للأدوار العليا' : '⚡ 5th Settlement: sand and cement hoisting underway'}</span>
                 <span className="text-[#D4A843]">✦</span>
-                <span>{lang === 'ar' ? '🔨 الشيخ زايد: تكسير فيلا وتجريد حمام ومطبخ' : '🔨 Sheikh Zayed: villa and kitchen demolition works'}</span>
+                <span>{lang === 'ar' ? '🔨 ال��يخ زايد: تكسير فيلا وتجريد حمام ومطبخ' : '🔨 Sheikh Zayed: villa and kitchen demolition works'}</span>
                 <span className="text-[#D4A843]">✦</span>
-                <span>{lang === 'ar' ? '👷 أكتوبر: توريد عمالة مدربة خلال 24 ساعة' : '👷 October: trained labor dispatch in 24 hours'}</span>
+                <span>{lang === 'ar' ? '👷 أكتوبر: عمال تشوين رملة وأسمنت مع عمال مدربون' : '👷 October: sand and cement hoisting workers with trained crews'}</span>
                 <span className="text-[#D4A843]">✦</span>
                 <span>{lang === 'ar' ? '🏗️ العاصمة الإدارية: تشوين رملة وسن بالأوناش' : '🏗️ New Capital: concrete aggregate hoisting'}</span>
                 <span className="text-[#D4A843]">✦</span>
@@ -557,10 +557,10 @@ export default function HomePage() {
                   <div>
                     <label className="block text-sm font-black text-slate-800 dark:text-white mb-2">{t('calc.serviceLabel')}</label>
                     <div className="grid grid-cols-2 gap-2">
-                      <button type="button" onClick={() => setCalcService('demolition')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border ...`}>{lang === 'ar' ? 'تكسير حوائط وحمامات' : 'Demolition Works'}</button>
-                      <button type="button" onClick={() => setCalcService('materials')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border ...`}>{lang === 'ar' ? 'تشوين رملة وأسمنت' : 'Materials Hoisting'}</button>
-                      <button type="button" onClick={() => setCalcService('labor')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border ...`}>{lang === 'ar' ? 'توريد عمالة' : 'Labor Supply'}</button>
-                      <button type="button" onClick={() => setCalcService('cleaning')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border ...`}>{lang === 'ar' ? 'نظافة مواقع وردش' : 'Site Cleanup'}</button>
+                      <button type="button" onClick={() => setCalcService('demolition')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border transition-all text-center cursor-pointer ${calcService === 'demolition' ? 'bg-[#D4A843] text-[#0a1628] border-[#D4A843] shadow-md font-black' : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300'}`}>{lang === 'ar' ? 'تكسير حوائط وحمامات' : 'Demolition Works'}</button>
+                      <button type="button" onClick={() => setCalcService('materials')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border transition-all text-center cursor-pointer ${calcService === 'materials' ? 'bg-[#D4A843] text-[#0a1628] border-[#D4A843] shadow-md font-black' : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300'}`}>{lang === 'ar' ? 'تشوين رملة وأسمنت' : 'Materials Hoisting'}</button>
+                      <button type="button" onClick={() => setCalcService('labor')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border transition-all text-center cursor-pointer ${calcService === 'labor' ? 'bg-[#D4A843] text-[#0a1628] border-[#D4A843] shadow-md font-black' : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300'}`}>{lang === 'ar' ? 'توريد عمالة' : 'Labor Supply'}</button>
+                      <button type="button" onClick={() => setCalcService('cleaning')} className={`p-3 rounded-xl text-xs sm:text-sm font-bold border transition-all text-center cursor-pointer ${calcService === 'cleaning' ? 'bg-[#D4A843] text-[#0a1628] border-[#D4A843] shadow-md font-black' : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-700 dark:text-gray-300'}`}>{lang === 'ar' ? 'نظافة مواقع وردش' : 'Site Cleanup'}</button>
                     </div>
                   </div>
 
@@ -673,7 +673,7 @@ export default function HomePage() {
             <p className="text-lg sm:text-xl font-medium text-[#0a1628]/85 mb-10 max-w-2xl mx-auto leading-relaxed">{t('cta.sub')}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <a href="https://wa.me/201029046651?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%AF%D9%88%D8%B1%D8%AA%D9%85%D9%88%D9%86%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%AD%D8%AF%D9%88%20%D9%85%D8%A7%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1%20%D9%88%D8%A7%D9%84%D8%AA%D8%B4%D9%88%D9%8A%D9%86%20%D9%88%D8%A7%D9%84%D8%A7%D8%B1%D8%AA%D9%88%D9%8A%D8%AF%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9" target="_blank" rel="noopener noreferrer" title={t('cta.whatsapp')} aria-label={t('cta.whatsapp')} className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base sm:text-lg font-black text-white bg-green-700 hover:bg-green-800 rounded-2xl transition-all shadow-xl">
+              <a href="https://wa.me/201029046651?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%AF%D9%88%D8%B1%D8%AA%D9%85%D9%88%D9%86%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%AD%D8%AF%D9%88%20%D9%85%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1%20%D9%88%D8%A7%D9%84%D8%AA%D8%B4%D9%88%D9%8A%D9%86%20%D9%88%D8%A7%D9%84%D8%AF%D8%A7%D8%B1%D8%AA%D9%88%D9%8A%D8%AF%20%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D8%A9" target="_blank" rel="noopener noreferrer" title={t('cta.whatsapp')} aria-label={t('cta.whatsapp')} className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base sm:text-lg font-black text-white bg-green-700 hover:bg-green-800 rounded-2xl transition-all shadow-xl">
                 <FaWhatsapp className="w-6 h-6" />
                 {t('cta.whatsapp')}
               </a>
